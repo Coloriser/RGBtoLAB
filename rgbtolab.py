@@ -1,6 +1,10 @@
 from PIL import Image, ImageCms
+import sys
 
-im = Image.open('col.jpg')
+if len(sys.argv) < 2:
+		print("Give the filename as an argument")
+filename = sys.argv[1]	
+im = Image.open(filename)
 if im.mode != "RGB":
   im = im.convert("RGB")
 
